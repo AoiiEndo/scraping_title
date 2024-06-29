@@ -18,10 +18,10 @@ titles =[]
 try:
     for i in range(1, 100):
         if(i >= 2):
-            click_area = driver.find_element(By.XPATH, '//main/div[2]/div/div[2]/div/button[2]')
+            click_area = driver.find_element(By.XPATH, '---')
             click_area.click()
         for j in range(1,10):
-            title_position = driver.find_element(By.XPATH, '//main/div[2]/div/article['+str(j)+']/h2/a').text
+            title_position = driver.find_element(By.XPATH, '/---['+str(j)+']---').text
             titles.append(title_position)
     data = np.vstack(titles)
     df = pd.DataFrame(data, columns=[1])
